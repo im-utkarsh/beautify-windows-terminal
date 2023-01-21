@@ -1,0 +1,126 @@
+command_timeout = 1000
+add_newline = true
+
+format = """
+[╭─](color2)\
+    [【](color7)\
+      $username\
+      [@](color7)\
+      $hostname \
+      $directory\
+    [】](color7)
+[│](color2)\
+    $git_branch\
+    $git_status\
+    $package\
+    $python\
+    $conda\
+    $nodejs
+[╰─](color2)\
+    $memory_usage\
+    $time\
+    $cmd_duration\
+    $shell"""
+
+palette = "pywal"
+[palettes.pywal]
+color0="#0D0C0B"
+color1="#ad6992"
+color2="#CA3F6A"
+color3="#65897f"
+color4="#c59ca0"
+color5="#8498af"
+color6="#bf6e79"
+color7="#808291"
+color8="#908478"
+
+
+[memory_usage]
+disabled = false
+symbol = " "
+threshold = -1
+format = " [$symbol$ram](color1)"
+
+
+[username]
+show_always = true
+format = "[$user](color1)"
+
+[hostname]
+ssh_only= false
+format = "[$hostname](color1)"
+disabled = false
+
+[character]
+success_symbol = " [$shell\\$](color7)"
+error_symbol = " [$shell✖](color7)"
+
+[shell]
+powershell_indicator = " _"
+bash_indicator = " "
+disabled= false
+
+
+[time]
+disabled = false
+time_format = "%T"
+format = "[ $time](color5)"
+use_12hr = true
+
+[directory]
+disabled = false
+read_only = " "
+truncation_length = 4
+truncate-to_repo = false
+format = "[$read_only](color4)[$path](color4)"
+home_symbol = ""
+
+# [directory.substitution]
+# "~" = ""
+
+[cmd_duration]
+disabled = false
+min_time = 2000
+show_milliseconds = true
+show_notifications = false
+min_time_to_notify = 45_000
+format = "[ 祥$duration](color3) "
+
+[git_status]
+stashed = " \\(${count}\\) "
+ahead = "ﲗ ${count}"
+behind = "ﲔ ${count}"
+diverged = "李${ahead_count} ${behind_count}"
+conflicted = "${count}"
+deleted = " [${count}](color3)"
+renamed = "﫦${count}"
+modified = "[ \\(${count}\\) ](color3)"
+staged = " [${count}](color3)"
+untracked = " \\(${count}\\)"
+format = "([$all_status$ahead_behind](color3)) "
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch](color7)"
+
+[package]
+symbol =" "
+display_private = true
+version_format = "v${raw}"
+format = "[$symbol$version](color6)"
+
+[conda]
+symbol = " 🅒 "
+ignore_base = false
+format = "[$symbol$environment](color6)"
+
+#=== languages ===
+
+[nodejs]
+symbol = ""
+format = "[ $symbol($version)](color8)"
+
+[python]
+symbol = ""
+python_binary = "python"
+format = '[$symbol$pyenv_prefix$version(\($virtualenv\))](color8)'
