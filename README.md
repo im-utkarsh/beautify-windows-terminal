@@ -1,4 +1,4 @@
-# 🔥Windows Terminal Better
+# ✨Windows Terminal Better
 Make windows terminal better using spaceship and winwal(pywal).
 
 # Easy to follow steps
@@ -77,7 +77,7 @@ Make windows terminal better using spaceship and winwal(pywal).
       Remember this will also change desktop background to this image.  
       Checkout [winwal](https://github.com/scaryrawr/winwal) for more commands.
 
-# ✨Final Look
+# 🔥Final Look
 
 ![Preview](preview1.png)  
 
